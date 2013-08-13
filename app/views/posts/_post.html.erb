@@ -1,0 +1,9 @@
+<li>
+  <h3 class="symptomtitle">Symptom</h3>
+    <span class="symptom"><%= post.symptom %></span>
+  <h4 class="severitytitle">Severity</h4>
+  <span class="severity"><%= post.severity %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(post.created_at) %> ago.
+  </span>
+</li>

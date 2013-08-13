@@ -52,10 +52,21 @@ describe "User pages" do
 
   describe "profile page" do
     let(:user) { FactoryGirl.create(:user) }
+    let!(:m1) { FactoryGirl.create(:post, user: user, symptom: "Foo", severity: "mild") }
+    let!(:m2) { FactoryGirl.create(:post, user: user, symptom: "Bar", severity: "moderate") }
+
     before { visit user_path(user) }
 
     it { should have_content(user.name) }
     it { should have_title(user.name) }
+
+    describe "posts" do
+      it { should have_content(m1.symptom) }
+      it { should have_content(m2.symptom) }
+      it { should have_content(m1.severity) }
+      it { should have_content(m2.severity) }
+    end
+
   end
 
   describe "signup page" do

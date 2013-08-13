@@ -9,4 +9,10 @@ FactoryGirl.define do
       admin true
     end
   end
+
+  factory :post do
+  	symptom "cough"
+  	severity "mild"
+  	user
+  end
 end
