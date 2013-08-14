@@ -1,0 +1,9 @@
+<%= form_for(@post) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+  	<%= f.text_area :symptom, placeholder: "What are you feeling today?" %>
+  </div>
+  <%= f.submit "Mild", :name => "mild" %>
+  <%= f.submit "Moderate", :name => "moderate" %>
+  <%= f.submit "Severe", :name => "severe" %>
+ <% end %>
